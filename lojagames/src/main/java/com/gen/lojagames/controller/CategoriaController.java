@@ -9,5 +9,4 @@ public class CategoriaController {
 	4 - postCategoria = endPoint com a função de gravar uma nova categoria no banco de dados (testar o MÉTODO post via postman);
 	5 - putCategoria = endPoint com a função de atualizar dados de uma categoria (testar o MÉTODO put no postman);
 	6 - deleteCategoria = endPoint com a função de apagar uma categoria do banco de dados (testar o MÉTODO delete no postman).*/
-
 }
