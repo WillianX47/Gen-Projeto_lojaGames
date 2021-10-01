@@ -1,5 +1,6 @@
 package com.gen.lojagames.repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,5 +11,5 @@ public interface ProdutoRepository extends JpaRepository<ProdutoModel, Long> {
 	
 	public Optional<ProdutoModel> findAllById(Long id);
 	
-	public Optional<ProdutoModel> findAllByDescricaoTituloContainingIgnoreCase(String descricaoTitulo);
+	public List<ProdutoModel> findAllByDescricaoTituloContainingIgnoreCase(String descricaoTitulo);
 }
