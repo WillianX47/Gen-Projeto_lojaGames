@@ -1,8 +1,15 @@
 package com.gen.lojagames.repository;
 
-public class CategoriaRepository {
-	
-	/*-- Com a capacidade de se comunicar com o banco de dados mysql;
-	-- Usar o MÉTODO findAll (testar o MÉTODO findAll através do POSTMAN).*/
+import java.util.List;
+import java.util.Optional;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.gen.lojagames.model.CategoriaModel;
+
+public interface CategoriaRepository extends JpaRepository<CategoriaModel, Long> {
+
+	public Optional<CategoriaModel> findById(Long id);
+	
+	public List<CategoriaModel> findByNomeCategoriaContainingIgnoreCase(String nomeCategoria);
 }
