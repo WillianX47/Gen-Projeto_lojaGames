@@ -1,8 +1,14 @@
 package com.gen.lojagames.repository;
 
-public class ProdutoRepository {
-	
-	/*-- Com a capacidade de se comunicar com o banco de dados mysql;
-	-- Usar o MÉTODO findAll (testar o MÉTODO findAll através do POSTMAN).*/
+import java.util.Optional;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.gen.lojagames.model.ProdutoModel;
+
+public interface ProdutoRepository extends JpaRepository<ProdutoModel, Long> {
+	
+	public Optional<ProdutoModel> findAllById(Long id);
+	
+	public Optional<ProdutoModel> findAllByDescricaoTituloContainingIgnoreCase(String descricaoTitulo);
 }
