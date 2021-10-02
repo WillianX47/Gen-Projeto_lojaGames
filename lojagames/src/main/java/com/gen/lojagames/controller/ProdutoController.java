@@ -59,7 +59,7 @@ public class ProdutoController {
 	
 	@PostMapping("/novo")
 	public ResponseEntity<ProdutoModel> novoProduto(@Valid @RequestBody ProdutoModel novaProduto){
-		return ResponseEntity.status(200).body(repositorio.save(novaProduto));
+		return ResponseEntity.status(201).body(repositorio.save(novaProduto));
 	}
 	
 	@PutMapping("/atualizar")
