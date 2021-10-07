@@ -34,31 +34,30 @@ public class CategoriaController {
 		} else {
 			return ResponseEntity.ok(objetoLista);
 		}
-		
+
 	}
-	
+
 	@GetMapping("/{id}")
-    public ResponseEntity<CategoriaModel> findAllById(@PathVariable Long id){
-        return repositorio.findAllById(id).map(resp -> ResponseEntity.status(201).body(resp))
-                .orElse(ResponseEntity.status(400).build());
-    }
-	
+	public ResponseEntity<CategoriaModel> findAllById(@PathVariable Long id) {
+		return repositorio.findAllById(id).map(resp -> ResponseEntity.status(201).body(resp))
+				.orElse(ResponseEntity.status(400).build());
+	}
+
 	@GetMapping("/procura/{nomeCategoria}")
-    public ResponseEntity<List<CategoriaModel>> findAllByNomeCategoria(@PathVariable String nomeCategoria){
+	public ResponseEntity<List<CategoriaModel>> findAllByNomeCategoria(@PathVariable String nomeCategoria) {
 		return ResponseEntity.ok(repositorio.findByNomeCategoriaContainingIgnoreCase(nomeCategoria));
 	}
-	
+
 	@PostMapping("/nova")
-	public ResponseEntity<CategoriaModel> novaCategoria(@Valid @RequestBody CategoriaModel novaCategoria){
+	public ResponseEntity<CategoriaModel> novaCategoria(@Valid @RequestBody CategoriaModel novaCategoria) {
 		return ResponseEntity.status(200).body(repositorio.save(novaCategoria));
 	}
-	
+
 	@PutMapping("/atualizar")
-	public ResponseEntity<CategoriaModel> atualizarCategoria(@Valid @RequestBody CategoriaModel atualizarCategoria){
+	public ResponseEntity<CategoriaModel> atualizarCategoria(@Valid @RequestBody CategoriaModel atualizarCategoria) {
 		return ResponseEntity.status(200).body(repositorio.save(atualizarCategoria));
-	}	
-	
-	
+	}
+
 	/*
 	 * CategoriaController Com 5 endpoints: 1 - findAllCategoria = endPoint com a
 	 * capacidade de trazer todas as categorias (testar o MÉTODO findAll através do
