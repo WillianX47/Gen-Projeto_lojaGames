@@ -2,6 +2,7 @@ package com.gen.lojagames.model;
 
 /**
  * Classe espelho de UsuarioModel
+ * 
  * @author SistemaIOEstudo
  *
  */

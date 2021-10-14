@@ -11,13 +11,13 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "tb_usuario")
 public class UsuarioModel {
-	
+
 	private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long id;
-	
+
 	private @NotBlank String nome;
-	
+
 	private @NotBlank @Size(min = 5, max = 100) String usuario;
-	
+
 	private @NotBlank @Size(min = 7, max = 100) String senha;
 
 	public Long getId() {
@@ -52,5 +52,4 @@ public class UsuarioModel {
 		this.senha = senha;
 	}
 
-	
 }

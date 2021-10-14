@@ -21,12 +21,9 @@ public class CategoriaModel {
 	private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long id;
 
 	private @NotBlank String nomeCategoria;
-	
 
-	
-	@OneToMany(mappedBy = "categoriaRelacionada",cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties({"categoriaRelacionada"})
-	
+	@OneToMany(mappedBy = "categoriaRelacionada", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties({ "categoriaRelacionada" })
 	private List<ProdutoModel> categoriaProduto = new ArrayList<>();
 
 	public Long getId() {
