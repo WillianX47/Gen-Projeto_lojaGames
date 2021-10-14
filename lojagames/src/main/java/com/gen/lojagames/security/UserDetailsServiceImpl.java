@@ -11,6 +11,12 @@ import org.springframework.stereotype.Service;
 import com.gen.lojagames.model.UsuarioModel;
 import com.gen.lojagames.repository.UsuarioRepository;
 
+/**
+ * Classe base para security
+ * 
+ * @author Eduardo
+ *
+ */
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
