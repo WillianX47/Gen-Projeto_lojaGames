@@ -8,10 +8,18 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.gen.lojagames.model.UsuarioModel;
 
-public class UserDetailsImpl implements UserDetails{
+	/**
+	 * Classe para a camada de segurança.
+	 * 
+	 * @since 1.0
+	 * @author Macauly Fragoso
+	 * 
+	 */
 
-private static final long serialVersionUID = 1L;
+public class UserDetailsImpl implements UserDetails{
 	
+private static final long serialVersionUID = 1L;
+
 	private String userName;
 	private String password;
 	private List <GrantedAuthority> authorities;
