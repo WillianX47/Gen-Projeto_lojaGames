@@ -23,6 +23,11 @@ public class ProdutoModel {
 	@JoinColumn(name = "categoria_id")
 	@JsonIgnoreProperties({ "categoriaProduto" })
 	private CategoriaModel categoriaRelacionada;
+	
+	@ManyToOne
+	@JoinColumn(name = "usuario_id")
+	@JsonIgnoreProperties({"produtos"})
+	private UsuarioModel user;
 
 	public Long getId() {
 		return id;
